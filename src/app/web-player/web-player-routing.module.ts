@@ -30,6 +30,8 @@ import {UserProfilePageComponent} from "./users/user-profile-page/user-profile-p
 import {UserProfilePageResolver} from "./users/user-profile-page/user-profile-page-resolver.service";
 import {NewReleasesPageComponent} from "./albums/new-releases-page/new-releases-page.component";
 import {NewReleasesPageResolver} from "./albums/new-releases-page/new-releases-page.resolver.service";
+import { HomePageComponent } from './albums/home-page/home-page.component';
+import {HomePageResolver} from "./albums/home-page/home-page.resolver.service";
 import {TopTracksPageComponent} from "./tracks/top-tracks-page/top-tracks-page.component";
 import {TopTracksPageResolver} from "./tracks/top-tracks-page/top-tracks-page-resolver.service";
 import {RadioPageComponent} from "./radio-page/radio-page.component";
@@ -44,13 +46,15 @@ import {CheckPermissionsGuard} from "../guards/check-permissions-guard.service";
 
 const routes: Routes = [
     {path: '', component: WebPlayerComponent, canActivateChild: [CheckPermissionsGuard], children: [
-        {path: '', component: PopularGenresComponent, resolve: {genres: PopularGenresResolver}, data: {name: 'home'}},
+        {path: '', component: HomePageComponent, resolve: {albums: HomePageResolver}, data: {name: 'home-page'}},
 
         {path: 'popular-albums', component: PopularAlbumsComponent, resolve: {albums: PopularAlbumsResolver}, data: {name: 'popular-albums'}},
 
         {path: 'new-releases', component: NewReleasesPageComponent, resolve: {albums: NewReleasesPageResolver}, data: {name: 'new-releases'}},
 
         {path: 'top-50', component: TopTracksPageComponent, resolve: {tracks: TopTracksPageResolver}, data: {name: 'top-50'}},
+
+        {path: 'home-page', component: HomePageComponent, resolve: {genres: HomePageResolver}, data: {name: 'home-page'}},
 
         {path: 'popular-genres', component: PopularGenresComponent, resolve: {genres: PopularGenresResolver}, data: {name: 'popular-genres'}},
 

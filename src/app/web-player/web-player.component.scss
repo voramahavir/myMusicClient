@@ -12,11 +12,27 @@ web-player {
   > .player-content {
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 80%;
     height: calc(100% - #{$wp-controls-height} - 75px);
     position: relative;
     flex: 1 1 auto;
     overflow: hidden;
+    float: left;
+
+    &.mobile {
+      height: calc(100% - #{$wp-mobile-controls-height});
+    }
+  }
+
+  > .ads-box {
+    display: flex;
+    width: 20%;
+    height: calc(100% - #{$wp-controls-height} - 75px);
+    position: relative;
+    flex: 1 1 auto;
+    overflow: hidden;
+    float: right;
+    padding: 18px;
 
     &.mobile {
       height: calc(100% - #{$wp-mobile-controls-height});

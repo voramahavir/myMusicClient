@@ -1,5 +1,11 @@
 <div class="scroll-container" customScrollbar #scrollContainer>
-    <p class="queue-tag"> QUEUE </p>
+    <div class="queue-box">
+        <span class="queue-tag"> QUEUE </span>
+        <button class="player-action no-style" [class.active]="player.getState().shuffling" (click)="player.toggleShuffle()" tooltip="Shuffle">
+            <svg-icon name="shuffle"></svg-icon>
+        </button>    
+        <repeat-button></repeat-button>
+    </div>
     <div class="queue-item" *ngFor="let track of queue.getAll(); index as index;" [class.active]="trackIsPlaying(track)" [contextMenu]="{item: track, type: 'track'}">
         <div class="img-container" *ngIf="track.album">
             <img [src]="settings.getDefaultImage('album')" [lazyLoad]="track.album.image" [scrollTarget]="scrollContainer" class="lazy-loaded">

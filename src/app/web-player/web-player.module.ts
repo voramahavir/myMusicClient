@@ -82,6 +82,8 @@ import {Users} from "./users/users.service";
 import {UserProfilePageResolver} from "./users/user-profile-page/user-profile-page-resolver.service";
 import {NewReleasesPageResolver} from "./albums/new-releases-page/new-releases-page.resolver.service";
 import {NewReleasesPageComponent} from "./albums/new-releases-page/new-releases-page.component";
+import { HomePageComponent } from './albums/home-page/home-page.component';
+import { HomePageResolver } from './albums/home-page/home-page.resolver.service';
 import { TopTracksPageComponent } from './tracks/top-tracks-page/top-tracks-page.component';
 import {TopTracksPageResolver} from "./tracks/top-tracks-page/top-tracks-page-resolver.service";
 import {RadioPageComponent} from './radio-page/radio-page.component';
@@ -111,6 +113,7 @@ import {TrackPlays} from "./player/track-plays.service";
         NavSidebarComponent,
         PopularAlbumsComponent,
         NewReleasesPageComponent,
+        HomePageComponent,
         PopularGenresComponent,
         SearchSlideoutPanelComponent,
         FilterablePageHeaderComponent,
@@ -198,6 +201,7 @@ import {TrackPlays} from "./player/track-plays.service";
         PlaylistResolver,
         ArtistResolver,
         NewReleasesPageResolver,
+        HomePageResolver,
         UserLibrary,
         SearchResolver,
         LibraryTracksResolver,

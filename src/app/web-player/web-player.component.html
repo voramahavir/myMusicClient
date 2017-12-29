@@ -16,6 +16,10 @@
 
 </div>
 
+<div class="ads-box" [class.mobile]="state.isMobile">
+    <ad-host slot="ad_slot_1"></ad-host>
+</div>
+
 <player-controls *ngIf="!state.isMobile"></player-controls>
 <mobile-player-controls *ngIf="state.isMobile"></mobile-player-controls>
 

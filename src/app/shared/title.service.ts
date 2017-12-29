@@ -42,6 +42,8 @@ export class TitleService {
                 return this.i18n.t('Popular Albums');
             case 'popular-genres':
                 return this.i18n.t('Popular Genres');
+            case 'home-page':
+                return this.i18n.t('Home');
             case 'top-50':
                 return this.i18n.t('Top 50');
             case 'new-releases':
