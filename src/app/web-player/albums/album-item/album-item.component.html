@@ -3,5 +3,5 @@
     <playback-control-button (play)="play()" (pause)="pause()" [playing]="playing()"></playback-control-button>
 </div>
 <div class="footer">
-    <a class="artist-name secondary-text" *ngIf="album.artist" [routerLink]="urls.artist(album.artist)">{{album.artist.name}}</a>
+    <a class="album-name primary-text" [routerLink]="urls.album(album)">{{album.name}}</a>
 </div>

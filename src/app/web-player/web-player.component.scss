@@ -33,7 +33,7 @@ web-player {
     overflow: hidden;
     float: right;
     padding: 18px;
-
+    background-color: #222428;
     &.mobile {
       height: calc(100% - #{$wp-mobile-controls-height});
     }

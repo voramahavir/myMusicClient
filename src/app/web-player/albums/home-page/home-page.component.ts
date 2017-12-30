@@ -14,7 +14,7 @@ export class HomePageComponent extends FilterablePage<Album> implements OnInit {
       first: {
         index: 0,
         data: [],
-        display: 4
+        display: 3
       },
       second: {
         index: 0,
