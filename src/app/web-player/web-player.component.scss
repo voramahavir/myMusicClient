@@ -19,6 +19,9 @@ web-player {
     overflow: hidden;
     float: left;
 
+    @media only screen and (max-width: $tablet) {
+      width: 100%;
+    }
     &.mobile {
       height: calc(100% - #{$wp-mobile-controls-height});
     }
@@ -36,6 +39,9 @@ web-player {
     background-color: #222428;
     &.mobile {
       height: calc(100% - #{$wp-mobile-controls-height});
+    }
+    @media only screen and (max-width: $tablet) {
+      display: none;
     }
   }
 

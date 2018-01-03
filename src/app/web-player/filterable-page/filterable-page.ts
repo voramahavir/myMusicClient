@@ -45,6 +45,14 @@ export class FilterablePage<T> implements OnDestroy {
     }
 
     /**
+     * Set specified items as filterable and original items.
+     */
+    protected setHomeItems(items: T[]) {
+        this.filteredItems = items;
+        this.originalItems = items;
+    }
+
+    /**
      * Set specified items as filterable items.
      */
     protected setFilteredItems(items: T[]) {

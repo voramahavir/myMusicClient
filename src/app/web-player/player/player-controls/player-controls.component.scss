@@ -10,6 +10,12 @@ player-controls {
   border-top: 1px solid rgba(255,255,255,0.12);
   position: relative;
 
+  @media screen  and (max-width: $tablet) {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
   button:hover {
     color: $wp-text-color-200;
   }

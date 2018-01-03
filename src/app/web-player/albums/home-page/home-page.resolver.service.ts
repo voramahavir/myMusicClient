@@ -5,28 +5,27 @@ import {WebPlayerState} from "../../web-player-state.service";
 import {Albums} from "../albums.service";
 
 @Injectable()
-export class HomePageResolver implements Resolve<Album[]> {
+export class HomePageResolver implements Resolve<Array<Album[]>> {
     constructor(
         private albums: Albums,
         private router: Router,
         private state: WebPlayerState,
     ) {}
 
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<Album[]> {
-        this.state.loading = true;
-
-        return this.albums.getNewReleases().toPromise().then(albums => {
-            this.state.loading = false;
-
-            if (albums) {
-                return albums;
-            } else {
-                this.router.navigate(['/']);
-                return null;
-            }
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<Array<Album[]>> {
+        return this.albums.getAll()[0].toPromise().then(albums => {
+            let a = [];
+            a.push(albums);
+            return this.albums.getAll()[1].toPromise().then(albums => {
+                a.push(albums);
+                return this.albums.getAll()[2].toPromise().then(albums => {
+                    this.state.loading = false;
+                    a.push(albums);
+                    return a;
+                });
+            });
         }).catch(() => {
             this.state.loading = false;
-            this.router.navigate(['/']);
         });
     }
 }

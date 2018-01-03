@@ -33,6 +33,13 @@ export class Albums {
     }
 
     /**
+     * Get new releases.
+     */
+    public getAll(): [Observable<Album[]>, Observable<Album[]>] {
+        return [this.httpClient.get('albums/new-releases'), this.httpClient.get('albums/popular'), this.httpClient.get('tracks/top')];
+    }
+
+    /**
      * Create a new album.
      */
     public create(payload: object): Observable<Album> {
