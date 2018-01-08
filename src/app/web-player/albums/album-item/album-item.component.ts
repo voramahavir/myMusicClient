@@ -49,7 +49,7 @@ export class AlbumItemComponent {
 
         const tracks = WpUtils.assignAlbumToTracks(this.album.tracks, this.album);
 
-        //if could not fetch any tracks for album, bail
+        // if could not fetch any tracks for album, bail
         if ( ! tracks.length) {
             this.toast.show('This album has no songs yet.');
             return this.player.state.buffering = false;

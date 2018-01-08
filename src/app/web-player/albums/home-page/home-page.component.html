@@ -1,9 +1,8 @@
 <div class="scroll-container" customScrollbar #scrollContainer>
-    <ad-host slot="ad_slot_1"></ad-host>
     <div class="new-releases-box">
         <filterable-page-header [filterQuery]="filterQuery" class="margin">
             <span trans>New Releases</span>
-            <a href="new-releases"> View all > </a>
+            <a [routerLink]="['new-releases']"> View all > </a>
         </filterable-page-header>
         <media-grid>
             <a class="media-icon left media-icon-left" href="javascript:void(0)" (click)="prev('first')"> <svg viewBox="0 0 1024 1024" aria-labelledby="blsi-ant-circle-left-title" id="si-ant-circle-left" width="100%" height="100%"><title id="blsi-ant-circle-left-title">icon circle-left</title><path d="M512 0Q373 0 255 68.5T68.5 255 0 512t68.5 257T255 955.5t257 68.5 257-68.5T955.5 769t68.5-257-68.5-257T769 68.5 512 0zm120 746q9 9 9 22.5t-9.5 23T609 801t-23-10L330 535q-9-9-9-22.5t9-22.5l257-258q10-9 23-9t22.5 9 9.5 22.5-9 22.5L398 513z"></path></svg> </a>
@@ -20,12 +19,12 @@
     <div class="common-box">
         <filterable-page-header [filterQuery]="filterQuery" class="margin">
             <span trans>Top 50</span>
-            <a href="top-50"> View all > </a>
+            <a [routerLink]="['top-50']"> View all > </a>
         </filterable-page-header>
 
         <media-grid>
             <a class="media-icon left media-icon-left" href="javascript:void(0)" (click)="prev('second')"> <svg viewBox="0 0 830 1024" aria-labelledby="cksi-ant-double-left-title" id="si-ant-double-left" width="100%" height="100%"><title id="cksi-ant-double-left-title">icon double-left</title><path d="M564 9q10 10 10 23t-10 23L82 512l482 457q10 10 10 23t-10 23q-10 9-24 9t-24-9L10 535Q0 525 0 512t10-23L516 9q10-9 24-9t24 9zm256 0q10 10 10 23t-10 23L338 512l482 457q10 10 10 23t-10 23q-10 9-24 9t-24-9L266 535q-10-10-10-23t10-23L772 9q10-9 24-9t24 9z"></path></svg> </a>
-            <album-item *ngFor="let album of data.second.data" [album]="album" [contextMenu]="{item: album, type: 'album'}" [scrollContainer]="scrollContainer"></album-item>
+            <album-item *ngFor="let track of data.second.data" [album]="track" [contextMenu]="{item: track, type: 'track'}" [scrollContainer]="scrollContainer"></album-item>
             <a class="media-icon right media-icon-right" href="javascript:void(0)" (click)="next('second')">  <svg viewBox="0 0 830 1024" aria-labelledby="clsi-ant-double-right-title" id="si-ant-double-right" width="100%" height="100%"><title id="clsi-ant-double-right-title">icon double-right</title><path d="M266 9q-10 10-10 23t10 23l482 457-482 457q-10 10-10 23t10 23q10 9 24 9t24-9l506-480q10-10 10-23t-10-23L314 9q-10-9-24-9t-24 9zM10 9Q0 19 0 32t10 23l482 457L10 969Q0 979 0 992t10 23q10 9 24 9t24-9l506-480q10-10 10-23t-10-23L58 9Q48 0 34 0T10 9z"></path></svg> </a>
         </media-grid>
     
@@ -38,7 +37,7 @@
     <div class="common-box">
         <filterable-page-header [filterQuery]="filterQuery" class="margin">
             <span trans>Popular Albums</span>
-            <a href="popular-albums"> View all > </a>
+            <a [routerLink]="['popular-albums']"> View all > </a>
         </filterable-page-header>
 
         <media-grid>

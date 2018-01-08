@@ -125,6 +125,7 @@ nav-sidebar {
 
   .scroll-container {
     height: 75px;
+    overflow: hidden;
   }
   .logo-container {
     padding: 10px 15px;
@@ -161,6 +162,11 @@ nav-sidebar {
       position: absolute;
       top: 5px;
       right: 22px;
+    }
+
+    > button {
+      top: 4px;
+      right: 12px;
     }
 
     > loading-indicator {

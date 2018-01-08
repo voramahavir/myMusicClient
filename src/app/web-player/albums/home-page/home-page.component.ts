@@ -49,7 +49,7 @@ export class HomePageComponent extends FilterablePage<Album> implements OnInit {
 
     next(num) {
       this.data[num].index++;
-      var filteredItems;
+      let filteredItems;
       if (num === 'first') {
         filteredItems = this.filteredItems['first'];
       } else if (num === 'second') {
@@ -66,7 +66,7 @@ export class HomePageComponent extends FilterablePage<Album> implements OnInit {
 
     prev(num) {
       this.data[num].index--;
-      var filteredItems;
+      let filteredItems;
       if (num === 'first') {
         filteredItems = this.filteredItems['first'];
       } else if (num === 'second') {
