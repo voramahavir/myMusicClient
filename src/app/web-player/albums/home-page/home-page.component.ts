@@ -39,7 +39,16 @@ export class HomePageComponent extends FilterablePage<Album> implements OnInit {
       this.route.data.subscribe((data: {albums: Album[]}) => {
         this.setHomeItems(data.albums);
         this.filteredItems['first'] = this.filteredItems[0];
-        this.filteredItems['second'] = this.filteredItems[1];
+        this.filteredItems['temp'] = this.filteredItems[1];
+        const filteredItems = this.filteredItems['temp'];
+        let top50;
+        let final = [];
+        for (let j = 0;  j < filteredItems.length; j++) {
+          top50 = filteredItems[j].album;
+          top50.tracks = filteredItems[j];
+          final.push(top50);
+        }
+        this.filteredItems['second'] = final;
         this.filteredItems['third'] = this.filteredItems[2];
         this.data.first.data = this.filteredItems['first'].slice(this.data.first.index, this.data.first.display);
         this.data.second.data = this.filteredItems['second'].slice(this.data.second.index, this.data.second.display);
